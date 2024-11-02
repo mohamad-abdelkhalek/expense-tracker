@@ -5,35 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Expense Tracker</title>
     <link rel="stylesheet" href="./styles/style.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
   </head>
   <body>
     <div class="container">
+      <section id="budget-overview" class="budget-display">
+        <h2>Total Budget: <span id="total-budget">$0.00</span></h2>
+      </section>
 
-        <section id="budget-overview" class="budget-display">
-            <h2>Total Budget: <span id="total-budget">$0.00</span></h2>
+      <div class="main-content">
+        <section id="transaction-form" class="card trans-form">
+          <h2>Add Transaction</h2>
+          <form id="form">
+            <input
+              type="number"
+              id="amount"
+              placeholder="Amount"
+              min="0.5"
+              step="0.5"
+              required
+            />
+            <select id="type">
+              <option value="income">Income</option>
+              <option value="expense">Expense</option>
+            </select>
+            <input type="date" id="date" required />
+            <input type="text" id="notes" placeholder="Notes (optional)" />
+            <button type="submit" class="add-btn">Add Transaction</button>
+          </form>
         </section>
 
-        <div class="main-content">
-            <section id="transaction-form" class="card trans-form">
-                <h2>Add Transaction</h2>
-                <form id="form">
-                    <input type="number" id="amount" placeholder="Amount" required>
-                    <select id="type">
-                        <option value="income">Income</option>
-                        <option value="expense">Expense</option>
-                    </select>
-                    <input type="date" id="date" required>
-                    <input type="text" id="notes" placeholder="Notes (optional)">
-                    <button type="submit" class="add-btn">Add Transaction</button>
-                </form>
-            </section>
-
-            <section id="transaction-list" class="card trans-list">
-                <h2>Transactions</h2>
-                <ul id="transactions"></ul>
-            </section>
-        </div>
+        <section id="transaction-list" class="card trans-list">
+          <h2>Transactions</h2>
+          <ul id="transactions"></ul>
+        </section>
+      </div>
     </div>
 
     <script src="scripts/script.js"></script>
