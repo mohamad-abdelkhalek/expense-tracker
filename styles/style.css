@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Itim&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -5,7 +6,7 @@
 }
 
 body {
-    font-family: Arial;
+    font-family: "Exo 2", sans-serif;
     display: flex;
     justify-content: center;
     margin-top: 80px;
