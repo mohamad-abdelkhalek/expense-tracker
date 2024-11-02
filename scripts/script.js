@@ -29,6 +29,9 @@ function addTransaction(event) {
     updateLocalStorage();
     updateUI();
 
+    // Clear form
+    form.reset();
+
 }
 
 function displayTransaction() {
