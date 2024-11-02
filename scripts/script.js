@@ -11,3 +11,17 @@ const transactionsList = document.getElementById('transactions');
 const totalBudgetDisplay = document.getElementById('total-budget');
 
 form.addEventListener('submit', addTransaction);
+
+function addTransaction(event) {
+    event.preventDefault();
+    
+    // Capture form data
+    const transaction = {
+        id: Date.now(),
+        amount: parseFloat(amountInput.value),
+        type: typeInput.value,
+        date: dateInput.value,
+        notes: notesInput.value
+    };
+
+}
