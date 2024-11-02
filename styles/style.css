@@ -39,9 +39,9 @@ h1, h2 {
     background-color: #f9f9f9;
 }
 
-.tran-form form input,
-.tran-form form select,
-.tran-form form button {
+.trans-form form input,
+.trans-form form select,
+.trans-form form button {
     width: 100%;
     margin: 5px 0;
     padding: 10px;
