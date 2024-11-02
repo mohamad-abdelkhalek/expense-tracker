@@ -27,7 +27,7 @@ function addTransaction(event) {
     // Add transaction to list
     transactions.push(transaction);
     updateLocalStorage();
-    updateUI();
+    displayTransaction();
 
     // Clear form
     form.reset();
@@ -56,3 +56,10 @@ function displayTransaction() {
     // Display total budget
     totalBudgetDisplay.textContent = `$${totalBudget.toFixed(2)}`;
 }
+
+
+function updateLocalStorage() {
+    localStorage.setItem('transactions', JSON.stringify(transactions));
+}
+
+displayTransaction();
