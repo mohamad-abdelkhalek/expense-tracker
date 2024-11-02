@@ -25,3 +25,26 @@ function addTransaction(event) {
     };
 
 }
+
+function displayTransaction() {
+    // Reset list and total
+    transactionsList.innerHTML = '';
+    totalBudget = 0;
+
+    // Loop through transactions to display and calculate total budget
+    transactions.forEach(transaction => {
+        const listItem = document.createElement('li');
+        listItem.classList.add('transaction-item', transaction.type);
+        listItem.innerHTML = `
+            ${transaction.date} - ${transaction.notes || ''} - $${transaction.amount.toFixed(2)}
+            <button onclick="deleteTransaction(${transaction.id})">X</button>
+        `;
+        transactionsList.appendChild(listItem);
+
+        // Update total budget
+        totalBudget += transaction.type === 'income' ? transaction.amount : -transaction.amount;
+    });
+
+    // Display total budget
+    totalBudgetDisplay.textContent = `$${totalBudget.toFixed(2)}`;
+}
