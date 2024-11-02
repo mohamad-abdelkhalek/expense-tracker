@@ -12,7 +12,7 @@ body {
 }
 
 .container {
-    width: 400px;
+    width: 800px;
     padding: 20px;
     border: 1px solid #ddd;
     border-radius: 5px;
@@ -22,19 +22,36 @@ h1, h2 {
     text-align: center;
 }
 
-#transaction-form {
-    margin-top: 20px;
+.budget-display {
+    margin-bottom: 20px;
 }
 
-form input, form select, form button {
+.main-content {
+    display: flex;
+    gap: 20px;
+}
+
+.card {
+    flex: 1;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.tran-form form input,
+.tran-form form select,
+.tran-form form button {
     width: 100%;
     margin: 5px 0;
     padding: 10px;
 }
 
-#transaction-list ul {
+.trans-list ul {
     list-style-type: none;
     padding: 0;
+    max-height: 400px;
+    overflow-y: auto;
 }
 
 .transaction-item {
