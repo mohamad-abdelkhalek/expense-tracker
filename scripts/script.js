@@ -9,3 +9,5 @@ const dateInput = document.getElementById('date');
 const notesInput = document.getElementById('notes');
 const transactionsList = document.getElementById('transactions');
 const totalBudgetDisplay = document.getElementById('total-budget');
+
+form.addEventListener('submit', addTransaction);
