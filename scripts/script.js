@@ -62,4 +62,10 @@ function updateLocalStorage() {
     localStorage.setItem('transactions', JSON.stringify(transactions));
 }
 
+function deleteTransaction(id) {
+    transactions = transactions.filter(transaction => transaction.id !== id);
+    updateLocalStorage();
+    displayTransaction();
+}
+
 displayTransaction();
