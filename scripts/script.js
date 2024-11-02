@@ -24,6 +24,11 @@ function addTransaction(event) {
         notes: notesInput.value
     };
 
+    // Add transaction to list
+    transactions.push(transaction);
+    updateLocalStorage();
+    updateUI();
+
 }
 
 function displayTransaction() {
