@@ -17,7 +17,6 @@ form.addEventListener('submit', addTransaction);
 function addTransaction(event) {
     event.preventDefault();
     
-    // Capture form data
     const transaction = {
         id: editTransactionId || Date.now(),
         amount: parseFloat(amountInput.value),
@@ -31,7 +30,6 @@ function addTransaction(event) {
         transactions = transactions.map(t => (t.id === editTransactionId ? transaction : t));
         editTransactionId = null; // Reset after editing
     } else {
-        // Add new transaction
         transactions.push(transaction);
     }
 
@@ -40,7 +38,6 @@ function addTransaction(event) {
     updateLocalStorage();
     displayTransaction();
 
-    // Clear form
     form.reset();
 
 }
@@ -77,7 +74,6 @@ function applyDropdownFilter() {
         });
     }
 
-    // Render the filtered or sorted transactions
     displayTransaction(filteredTransactions);
 }
 
@@ -117,13 +113,12 @@ function editTransaction(id) {
     const transaction = transactions.find(t => t.id === id);
     if (!transaction) return;
 
-    // Populate the form with transaction data
+    // occupy the form with transaction data to edit it
     amountInput.value = transaction.amount;
     typeInput.value = transaction.type;
     dateInput.value = transaction.date;
     notesInput.value = transaction.notes;
 
-    // Set the transaction ID to indicate editing mode
     editTransactionId = id;
 }
 

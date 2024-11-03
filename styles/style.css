@@ -10,7 +10,7 @@ body {
     display: flex;
     justify-content: center;
     margin-top: 80px;
-    background-color: black;
+    background-color: rgb(40, 40, 40);
 }
 
 .container {
