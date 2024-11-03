@@ -39,11 +39,29 @@
         </section>
 
         <section id="transaction-list" class="card trans-list">
-          <h2>Transactions</h2>
+          <div class="transaction-header">
+              <h2>Transactions</h2>
+      
+              <div class="filter-options">
+                  <select id="filter-dropdown" class="input">
+                      <option value="all">All Transactions</option>
+                      <option value="income">Income Only</option>
+                      <option value="expense">Expense Only</option>
+                      <option value="min-max">Amount: Low to High</option>
+                      <option value="max-min">Amount: High to Low</option>
+                  </select>
+      
+                  <!-- Date Range Inputs -->
+                  <input type="date" id="start-date" class="input" placeholder="Start Date">
+                  <input type="date" id="end-date" class="input" placeholder="End Date">
+                  
+                  <button type="button" class="button filter-apply" onclick="applyDropdownFilter()">Apply Filter</button>
+              </div>
+          </div>
+      
+          <!-- Transaction List -->
           <ul id="transactions"></ul>
-        </section>
-      </div>
-    </div>
+      </section>      
 
     <script src="scripts/script.js"></script>
   </body>

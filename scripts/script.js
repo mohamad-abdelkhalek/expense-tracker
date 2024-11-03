@@ -45,11 +45,48 @@ function addTransaction(event) {
 
 }
 
-function displayTransaction() {
+function applyDropdownFilter() {
+    const filterOption = document.getElementById('filter-dropdown').value;
+    const startDate = new Date(document.getElementById('start-date').value);
+    const endDate = new Date(document.getElementById('end-date').value);
+    let filteredTransactions = [...transactions];
+
+    // Filter by type or amount based on dropdown selection
+    switch (filterOption) {
+        case "income":
+            filteredTransactions = filteredTransactions.filter(transaction => transaction.type === "income");
+            break;
+        case "expense":
+            filteredTransactions = filteredTransactions.filter(transaction => transaction.type === "expense");
+            break;
+        case "min-max":
+            filteredTransactions.sort((a, b) => a.amount - b.amount);
+            break;
+        case "max-min":
+            filteredTransactions.sort((a, b) => b.amount - a.amount);
+            break;
+        default:
+            break;
+    }
+
+    // Filter by date range if both dates are provided
+    if (!isNaN(startDate) && !isNaN(endDate)) {
+        filteredTransactions = filteredTransactions.filter(transaction => {
+            const transactionDate = new Date(transaction.date);
+            return transactionDate >= startDate && transactionDate <= endDate;
+        });
+    }
+
+    // Render the filtered or sorted transactions
+    displayTransaction(filteredTransactions);
+}
+
+
+function displayTransaction(transactionList = transactions) {
     transactionsList.innerHTML = '';
     totalBudget = 0;
 
-    transactions.forEach(transaction => {
+    transactionList.forEach(transaction => {
         const listItem = document.createElement('li');
         listItem.classList.add('transaction-item', transaction.type);
         listItem.innerHTML = `
