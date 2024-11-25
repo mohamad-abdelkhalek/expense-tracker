@@ -1,4 +1,4 @@
-# Expense Tracker Website
+# Expense Tracker
 
 This project is an expense tracker website built with JavaScript that allows users to manage their personal finances by adding, editing, deleting, and filtering transactions. It supports both income and expense transactions, allowing users to track their budget and view it in real-time.
 
